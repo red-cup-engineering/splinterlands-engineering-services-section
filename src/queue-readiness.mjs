@@ -24,7 +24,7 @@ export const SPLINTERLANDS_OPERATOR_POLICY = Object.freeze({
  * wants to act on a "queue-one" result still needs a battle-submission path
  * this service deliberately does not provide (see README).
  */
-export function validateOneSplinterlandsQueue(input) {
+export function admitOneSplinterlandsQueue(input) {
   if (typeof input.account !== "string" || !/^[a-z][a-z0-9.-]{2,15}$/u.test(input.account)) return Object.freeze({ kind: "refuse", reason: "the observed account is invalid" });
   if (!Number.isFinite(input.energy) || input.energy < SPLINTERLANDS_OPERATOR_POLICY.minimumEnergy) return Object.freeze({ kind: "refuse", reason: `energy is below the hard ${SPLINTERLANDS_OPERATOR_POLICY.minimumEnergy} floor` });
   if (!Number.isSafeInteger(input.outstandingMatches) || input.outstandingMatches !== 0) return Object.freeze({ kind: "refuse", reason: "an outstanding or malformed battle queue exists" });
