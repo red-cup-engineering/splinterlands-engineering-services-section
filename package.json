@@ -1,0 +1,30 @@
+{
+  "name": "@red-cup-engineering/splinterlands-engineering-services-section",
+  "version": "0.1.4-dev.0",
+  "type": "module",
+  "description": "Read-only Splinterlands collection observation, a bounded card-market purchase planner, and a battle-readiness audit signal. Deliberately has no battle-queue or team-submission encoder: see README for the ToS boundary this preserves.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/splinterlands-engineering-services-section.git"
+  },
+  "exports": {
+    ".": "./src/collection.mjs",
+    "./collection": {
+      "default": "./src/collection.mjs"
+    },
+    "./market": {
+      "default": "./src/market.mjs"
+    },
+    "./queue-readiness": {
+      "default": "./src/queue-readiness.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "package.json",
+    "README*",
+    "LICENSE*",
+    "src"
+  ],
+  "license": "MIT"
+}
